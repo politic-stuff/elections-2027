@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every 2027 Election — Federal, State &amp; Judicial</title>
+<meta name="description" content="A complete, sourced calendar of every federal, statewide, legislative and judicial election scheduled for 2027.">
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d212a; --line:#2a2f3a;
+    --ink:#e8eaf0; --muted:#9aa3b2; --faint:#6b7383;
+    --d:#5b8dd9; --r:#d95b5b; --n:#8b7dd9; --accent:#e8b04b;
+    --open:#3fbf7f;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f7f8fa; --panel:#fff; --panel2:#f0f2f6; --line:#dfe3ea;
+           --ink:#161922; --muted:#5c6472; --faint:#8a92a1; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+
+  header{padding:56px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+  h1{margin:0 0 10px;font-size:clamp(30px,5vw,46px);letter-spacing:-.02em;line-height:1.08}
+  .sub{color:var(--muted);font-size:17px;max-width:62ch;margin:0}
+  .asof{color:var(--faint);font-size:13px;margin-top:14px}
+
+  .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
+           border-radius:8px;padding:18px 20px;margin:24px 0 32px}
+  .callout h2{margin:0 0 8px;font-size:17px}
+  .callout p{margin:0 0 10px;color:var(--muted);font-size:15px}
+  .callout p:last-child{margin-bottom:0}
+  .nolist{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px}
+  .nolist li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
+  .nolist b{color:var(--ink);font-weight:600;min-width:210px;display:inline-block}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:0 0 32px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .stat .n{font-size:30px;font-weight:650;letter-spacing:-.02em;line-height:1}
+  .stat .l{color:var(--muted);font-size:12.5px;margin-top:6px;text-transform:uppercase;letter-spacing:.05em}
+
+  .controls{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;align-items:center}
+  input[type=search]{flex:1 1 220px;min-width:180px;background:var(--panel);border:1px solid var(--line);
+    color:var(--ink);border-radius:7px;padding:9px 12px;font-size:14.5px}
+  input[type=search]:focus{outline:2px solid var(--d);outline-offset:-1px}
+  .chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+    padding:7px 14px;font-size:13.5px;cursor:pointer;font-family:inherit}
+  .chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+  .group{margin:0 0 36px}
+  .group > h2{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);
+    margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+
+  .race{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:15px 17px;margin-bottom:9px}
+  .race.open{border-left:3px solid var(--open)}
+  .rtop{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between}
+  .rname{font-weight:600;font-size:16px}
+  .rstate{color:var(--muted);font-weight:400}
+  .dates{font-size:13.5px;color:var(--muted);white-space:nowrap}
+  .dates b{color:var(--ink);font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px;align-items:center}
+  .tag{font-size:12px;padding:3px 9px;border-radius:5px;background:var(--panel2);color:var(--muted);
+       border:1px solid var(--line)}
+  .tag.D{color:var(--d);border-color:color-mix(in srgb,var(--d) 40%,transparent)}
+  .tag.R{color:var(--r);border-color:color-mix(in srgb,var(--r) 40%,transparent)}
+  .tag.openseat{color:var(--open);border-color:color-mix(in srgb,var(--open) 45%,transparent);font-weight:600}
+  .tag.proj{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+  .inc{font-size:13.5px;color:var(--muted)}
+  .note{font-size:13.5px;color:var(--faint);margin-top:8px;font-style:italic}
+
+  .empty{color:var(--muted);padding:26px;text-align:center;border:1px dashed var(--line);border-radius:8px}
+
+  footer{border-top:1px solid var(--line);margin-top:44px;padding-top:24px;color:var(--faint);font-size:13.5px}
+  footer h3{color:var(--ink);font-size:15px;margin:0 0 10px}
+  footer ul{padding-left:20px;margin:0 0 16px}
+  footer li{margin-bottom:6px}
+  a{color:var(--d)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Every election happening in 2027</h1>
+  <p class="sub">A complete calendar of federal, statewide, legislative and judicial races. 2027 is an
+  off-year — the entire federal ballot is empty, and the real action is three governorships and eight
+  legislative chambers.</p>
+  <p class="asof" id="asof"></p>
+</header>
+
+<div class="callout">
+  <h2>There are no regular federal elections in 2027</h2>
+  <p>This is the single most important fact about the year, so it sits at the top rather than buried in a table:</p>
+  <ul class="nolist" id="nofed"></ul>
+  <p style="margin-top:14px">The only federal races that can occur in 2027 are <b>special elections</b> to fill
+  vacancies. As of July 2026 <b>none are scheduled</b>, and no current vacancy carries into 2027 — all five
+  outstanding U.S. House vacancies resolve during 2026. Historically a Congress sees roughly 5–10 House specials
+  across its two years, so expect a handful, but naming any of them today would be guesswork. Re-check in Q1 2027.</p>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="controls">
+  <input type="search" id="q" placeholder="Search office, state, or incumbent…" aria-label="Search races">
+  <button class="chip" data-f="all" aria-pressed="true">All</button>
+  <button class="chip" data-f="Governor" aria-pressed="false">Governors</button>
+  <button class="chip" data-f="Other statewide" aria-pressed="false">Statewide exec</button>
+  <button class="chip" data-f="Legislature" aria-pressed="false">Legislatures</button>
+  <button class="chip" data-f="Judicial" aria-pressed="false">Judicial</button>
+  <button class="chip" data-f="Mayor" aria-pressed="false">Mayors</button>
+  <button class="chip" data-f="local" aria-pressed="false">Other local</button>
+  <button class="chip" data-f="Ballot measure" aria-pressed="false">Ballot measures</button>
+  <button class="chip" data-f="open" aria-pressed="false">Open seats only</button>
+</div>
+
+<main id="list"></main>
+
+<footer>
+  <h3>How to read this page</h3>
+  <ul>
+    <li><b>General election dates are firm.</b> They are fixed by statute and, for Louisiana, by the Secretary
+        of State's published 2027 calendar.</li>
+    <li><b>Primary dates marked “projected” are not.</b> No state has published an official 2027 election
+        calendar yet, so those dates are derived from statutory formulas. Virginia already moved its 2026
+        primary by statute once — treat June 2027 as a default, not a lock.</li>
+    <li><b>Louisiana votes on Saturdays</b>, and Act 640 of 2024 pushed every 2027 date one week later. The
+        general is <b>Nov 20</b>, not Nov 13. Wikipedia currently shows Nov 13, applying the old formula without
+        the 2024 adjustment — if you cross-check this page against it, that is the discrepancy you will find.</li>
+  </ul>
+
+  <h3>Known gaps — stated plainly</h3>
+  <ul>
+    <li><b>The local section is curated, not exhaustive.</b> It covers big-city mayoralties and the local races
+        with genuine national salience. It does <i>not</i> attempt the full county sweep: Pennsylvania (all 67
+        counties), Mississippi (all 82) and Virginia each elect a complete slate of county offices in 2027,
+        running to thousands of races. Much of that data could only be inferred from term-length arithmetic
+        rather than sourced, so it is left out rather than guessed at.</li>
+    <li><b>City council seats are noted on the mayoral entries, not listed individually.</b> Chicago (50 wards),
+        Philadelphia (17), Houston (16), Nashville (40), Indianapolis (25), Denver (13) and Jacksonville (19)
+        all elect their full councils in 2027.</li>
+    <li><b>School boards are largely excluded.</b> The one firm finding worth recording: there is <i>no</i>
+        Chicago Board of Education election in 2027 — Illinois runs those in even years, and the January 2027
+        seating of the fully elected board is an inauguration, not an election.</li>
+    <li><b>Ballot measures are near-empty by nature, not by oversight.</b> Only one measure is certified
+        nationwide. Texas is normally the largest source of off-year propositions, but its legislature does not
+        convene until January 2027, so no Texas measure can exist yet. Maine and Wisconsin have pending items
+        that are not certified.</li>
+    <li><b>Ballotpedia blocked automated access</b> throughout this research. Figures come from Wikipedia, state
+        statute text, secretary of state calendars and local news instead. Search snippets returned stale data at
+        least once, so rows that could not be independently cross-checked deserve more skepticism.</li>
+  </ul>
+  <p>Compiled July 2026. Verify against official sources before relying on any date for filing or reporting.</p>
+</footer>
+
+</div>
+
+<script src="races.js"></script>
+<script>
+const ALL = RACES.concat(LOCAL);
+
+const fmt = iso => {
+  const [y,m,d] = iso.split('-').map(Number);
+  return new Date(y, m-1, d).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+};
+
+document.getElementById('asof').textContent =
+  'Compiled July 2026 · ' + ALL.length + ' scheduled races · general election dates confirmed, primaries largely projected';
+
+document.getElementById('nofed').innerHTML = NOT_HAPPENING
+  .map(n => `<li><b>${n.label}</b><span>${n.why}</span></li>`).join('');
+
+const stats = [
+  { n: 0, l: 'Federal races' },
+  { n: ALL.filter(r=>r.cat==='Governor').length, l: 'Governorships' },
+  { n: ALL.filter(r=>r.open).length, l: 'Open seats' },
+  { n: 8, l: 'Legislative chambers' },
+  { n: ALL.filter(r=>r.cat==='Mayor').length, l: 'Big-city mayors' },
+];
+document.getElementById('stats').innerHTML = stats
+  .map(s=>`<div class="stat"><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join('');
+
+let filter='all', query='';
+
+function card(r){
+  const tags=[];
+  if(r.open) tags.push('<span class="tag openseat">OPEN SEAT</span>');
+  if(r.hold==='D'||r.hold==='R') tags.push(`<span class="tag ${r.hold}">${r.hold} hold</span>`);
+  else if(r.hold&&r.hold!=='—') tags.push(`<span class="tag">${r.hold}</span>`);
+  if(r.primary && r.primaryConf==='projected') tags.push('<span class="tag proj">primary projected</span>');
+
+  let dates = r.primary
+    ? `Primary ${fmt(r.primary)} · <b>General ${fmt(r.general)}</b>`
+    : `<b>${fmt(r.general)}</b>`;
+  if (r.runoff) dates += ` · runoff ${fmt(r.runoff)}`;
+
+  const where = r.city ? `${r.city}, ${r.st}` : r.state;
+
+  return `<div class="race ${r.open?'open':''}">
+    <div class="rtop">
+      <span class="rname">${r.office} <span class="rstate">· ${where}</span></span>
+      <span class="dates">${dates}</span>
+    </div>
+    <div class="meta">${tags.join('')}</div>
+    ${r.incumbent && r.incumbent!=='—' ? `<div class="inc">${r.incumbent} — ${r.status}</div>` : `<div class="inc">${r.status}</div>`}
+    ${r.note?`<div class="note">${r.note}</div>`:''}
+  </div>`;
+}
+
+function render(){
+  const q=query.toLowerCase();
+  let rows=ALL.filter(r=>{
+    const okF = filter==='all' ? true
+              : filter==='open' ? r.open
+              : filter==='local' ? (r.tier==='Major local' && r.cat!=='Mayor')
+              : r.cat===filter;
+    const okQ = !q || (r.office+r.state+(r.city||'')+r.incumbent+r.status).toLowerCase().includes(q);
+    return okF && okQ;
+  });
+
+  if(!rows.length){
+    document.getElementById('list').innerHTML='<p class="empty">No races match that filter.</p>';
+    return;
+  }
+
+  const order=['Statewide executive','State legislature','Judicial','Ballot measure','Major local'];
+  const groups={};
+  rows.forEach(r=>(groups[r.tier]=groups[r.tier]||[]).push(r));
+
+  document.getElementById('list').innerHTML = order.filter(t=>groups[t]).map(t=>
+    `<section class="group"><h2>${t} — ${groups[t].length}</h2>
+     ${groups[t].sort((a,b)=>a.general.localeCompare(b.general)).map(card).join('')}</section>`
+  ).join('');
+}
+
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  filter=b.dataset.f; render();
+}));
+document.getElementById('q').addEventListener('input',e=>{query=e.target.value;render();});
+
+render();
+</script>
+</body>
+</html>
